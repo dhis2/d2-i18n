@@ -1,0 +1,24 @@
+{
+  "name": "dhis2-i18n",
+  "version": "1.0.0",
+  "description": "configuration wrapper for i18next translations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adeelshahid/dhis2-i18n.git"
+  },
+  "keywords": [
+    "i18n",
+    "i18next",
+    "translations"
+  ],
+  "author": "Muhammad Adeel",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/adeelshahid/dhis2-i18n/issues"
+  },
+  "homepage": "https://github.com/adeelshahid/dhis2-i18n#readme"
+}
