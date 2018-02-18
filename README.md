@@ -8,6 +8,28 @@ It has default configuration related to Dhis2 project. Upon import i18n is an ab
 - [Frameworks](https://www.i18next.com/supported-frameworks.html)
 
 
+
+## Example
+```js
+import i18n from 'dhis2-i81n'
+
+import enResources from './i18n/resources/en'
+import urResources from './i18n/resources/ur'
+
+// add all languages necessary
+i18n.addResources('en', 'translations-app', enResources)
+i18n.addResources('ur', 'translations-app', urResources)
+
+i18n.setDefaultNamespace('translations-app')
+
+i18n.changeLanguage('en')
+i18n.t('translation string')      // translation string
+
+i18n.changeLanguage('ur')
+i18n.t('translation string')      // سٹرنگ کا ترجمعہ
+```
+
+
 ## Import
 ```js
 import i18n from 'dhis2-i81n'
@@ -49,7 +71,7 @@ To set the correct namespace in translation resources, the following format will
 ## Set Namespace
 
 ```
-i18next.setDefaultNamespace(ns)
+i18n.setDefaultNamespace(ns)
 ```
 
 for e.g. *translations-app* the ns value would be *translations-app*
@@ -60,5 +82,13 @@ for e.g. *translations-app* the ns value would be *translations-app*
 will set the current language for frontend app.
 
 ```js
-i18next.changeLanguage(lng)
+i18n.changeLanguage(lng)
+```
+
+
+## In Code
+String passed into i18n.t will translate text w.r.t. current language set.
+
+```
+i18n.t('translation string');
 ```
