@@ -1,4 +1,5 @@
-# Usage
+
+## About
 
 
 It has default configuration related to Dhis2 project. Upon import i18n is an abstraction on top of [i18next library](https://www.i18next.com)
@@ -7,6 +8,11 @@ It has default configuration related to Dhis2 project. Upon import i18n is an ab
 - [Interpolation](https://www.i18next.com/interpolation.html)
 - [Frameworks](https://www.i18next.com/supported-frameworks.html)
 
+## Install
+
+```bash
+npm install --save dhis2-i18n
+```
 
 
 ## Example
@@ -37,7 +43,7 @@ import i18n from 'dhis2-i81n'
 
 ## Add Language
 
-```
+```js
 i18n.addResources(lng, ns, resources)
 ```
 
@@ -89,6 +95,6 @@ i18n.changeLanguage(lng)
 ## In Code
 String passed into i18n.t will translate text w.r.t. current language set.
 
-```
+```js
 i18n.t('translation string');
 ```
