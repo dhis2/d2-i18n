@@ -17,7 +17,7 @@ npm install --save dhis2-i18n
 
 ## Example
 ```js
-import i18n from 'dhis2-i81n'
+import i18n from 'dhis2-i18n'
 
 import enResources from './i18n/resources/en'
 import urResources from './i18n/resources/ur'
