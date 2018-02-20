@@ -3,15 +3,15 @@ var i18next = require('i18next')
 i18next.init({
   resources: undefined,
 
-  lng: undefined,
-  fallbackLng: undefined,
+  lng: 'en',
+  fallbackLng: 'en',
 
   debug: false,
   ns: ['translation'],
   defaultNS: 'translation',
   fallbackNS: false,
 
-  returnEmptyString: true,
+  returnEmptyString: false,
   returnObjects: false,
 
   keySeparator: false,
