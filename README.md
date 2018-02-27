@@ -2,7 +2,7 @@
 ## About
 
 
-It has default configuration related to Dhis2 project. Upon import i18n is an abstraction on top of [i18next library](https://www.i18next.com)
+It has default configuration related to DHIS2 project. Upon import i18n is an abstraction on top of [i18next library](https://www.i18next.com)
 
 - [API](https://www.i18next.com/api.html)
 - [Interpolation](https://www.i18next.com/interpolation.html)
@@ -11,13 +11,13 @@ It has default configuration related to Dhis2 project. Upon import i18n is an ab
 ## Install
 
 ```bash
-npm install --save dhis2-i18n
+npm install --save d2-i18n
 ```
 
 
 ## Example
 ```js
-import i18n from 'dhis2-i18n'
+import i18n from 'd2-i18n'
 
 import enResources from './i18n/resources/en'
 import urResources from './i18n/resources/ur'
@@ -38,7 +38,7 @@ i18n.t('translation string')      // سٹرنگ کا ترجمعہ
 
 ## Import
 ```js
-import i18n from 'dhis2-i81n'
+import i18n from 'd2-i18n'
 ```
 
 ## Add Language

@@ -1,5 +1,5 @@
 {
-  "name": "dhis2-i18n",
+  "name": "d2-i18n",
   "version": "1.0.1",
   "description": "configuration wrapper for i18next translations",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/adeelshahid/dhis2-i18n.git"
+    "url": "https://github.com/dhis2/d2-i18n.git"
   },
   "keywords": [
     "i18n",
@@ -21,7 +21,7 @@
   "author": "Muhammad Adeel",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/adeelshahid/dhis2-i18n/issues"
+    "url": "https://github.com/dhis2/d2-i18n/issues"
   },
-  "homepage": "https://github.com/adeelshahid/dhis2-i18n#readme"
+  "homepage": "https://github.com/dhis2/d2-i18n#readme"
 }
