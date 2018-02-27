@@ -86,3 +86,7 @@ Therefore, you must generate the localization before they are needed anywhere, f
 "prestart": "npm run localize && d2-manifest package.json ./public/manifest.webapp",
 "build": "npm run localize && node scripts/build.js"
 ```
+
+### Travis .travis.yml
+
+Before build/deploy part add the `npm run localize` so that localization files are available otherwise code will not work.
