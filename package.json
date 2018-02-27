@@ -1,6 +1,6 @@
 {
   "name": "d2-i18n",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "configuration wrapper for i18next translations",
   "main": "index.js",
   "peerDependencies": {
