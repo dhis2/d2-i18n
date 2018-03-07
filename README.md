@@ -29,6 +29,10 @@ String passed into i18n.t will translate text w.r.t. current language set.
 i18n.t('translation string');
 ```
 
+**Note**
+We don't use _react-i18next_ because handling cursor in editor with the mixing of ASCII and RTL characters is very messy. ASCII characters move the cursor to one end of the line while RTL characters take cursor to the opposite end. Additionally using variables in RTL language strings doesn't work as the first sequence of _{{_ might be entered correctly but the next sequence of _}}_ simply flows in the opposite direction making it impossible to translate.
+
+
 ## Integration
 
 ```bash
