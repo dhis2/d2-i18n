@@ -54,7 +54,7 @@ If you run into package update problems with any _d2-_ packages. Please use `npm
 Inside *scripts* section, add the *extract-pot* command below. It will use
 
 ```
-"extract-pot": "d2-i18n-extract -p src/ -o i18n/"
+"extract-pot": "npm run d2-i18n-extract -p src/ -o i18n/"
 ```
 
 Add pre-commit hook to extract _en.pot_ file. It will extract translation strings from _src/_ directory with file extensions _*.js, *.jx_. On finish it place _en.pot_ file inside _i18n/en.pot_ directory
@@ -72,7 +72,7 @@ Add pre-commit hook to extract _en.pot_ file. It will extract translation string
 Inside *scripts* section, add the *localize* command below.
 
 ```json
-"localize": "npm run extract-pot && d2-i18n-generate -n NAMESPACE -p ./i18n/ -o ./src/locales/"
+"localize": "npm run extract-pot && npm run d2-i18n-generate -n NAMESPACE -p ./i18n/ -o ./src/locales/"
 ```
 
 We default on en.pot file so there will not be an _en.po_ file.
