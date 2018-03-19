@@ -10,7 +10,7 @@ d2-i18n contains a default configuration set on top of [i18next library](https:/
 ## Install
 
 ```bash
-npm install --save d2-i18n
+yarn add d2-i18n
 ```
 
 ## Change/Set Language
@@ -37,7 +37,7 @@ We don't use _react-i18next_ because handling cursor in editor with the mixing o
 ## Integration
 
 ```bash
-$>  npm install --save-dev d2-i18n-extract d2-i18n-generate husky
+$>  yarn add d2-i18n-extract d2-i18n-generate husky lint-staged prettier
 ```
 
 - *d2-i18n-extract* is used to extract translation strings.
