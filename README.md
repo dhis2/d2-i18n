@@ -72,7 +72,7 @@ Add pre-commit hook to extract _en.pot_ file. It will extract translation string
 Inside *scripts* section, add the *localize* command below.
 
 ```json
-"localize": "d2-i18n-generate -n NAMESPACE -p ./i18n/ -o ./src/locales/"
+"localize": "npm run extract-pot && d2-i18n-generate -n NAMESPACE -p ./i18n/ -o ./src/locales/"
 ```
 
 We default on en.pot file so there will not be an _en.po_ file.
