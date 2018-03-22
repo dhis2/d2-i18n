@@ -37,7 +37,7 @@ We don't use _react-i18next_ because handling cursor in editor with the mixing o
 ## Integration
 
 ```bash
-$>  yarn add d2-i18n-extract d2-i18n-generate husky@next prettier
+$>  yarn add i18next d2-i18n-extract d2-i18n-generate husky@next prettier
 ```
 
 - *d2-i18n-extract* is used to extract translation strings.
