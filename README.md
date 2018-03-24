@@ -21,7 +21,7 @@ Will set the current language for frontend app.
 i18n.changeLanguage(lng)
 ```
 
-## RTL CSS
+## Right to Left Styling / RTL CSS
 Include postcss-rtl plugin as follows inside your webpack.config.*dev/prod*.js
 
 ```js
