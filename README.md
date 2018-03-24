@@ -15,11 +15,22 @@ yarn add d2-i18n
 
 ## Change/Set Language
 
-will set the current language for frontend app.
+Will set the current language for frontend app.
 
 ```js
 i18n.changeLanguage(lng)
 ```
+
+## RTL CSS
+Include postcss-rtl plugin as follows inside your webpack.config.*dev/prod*.js
+
+```js
+require('postcss-cssnext'),
+require('postcss-rtl'),
+require('postcss-flexbugs-fixes'),
+```
+
+Add **dir="ltr"** to *index.html* file. When switching to RTL language set **dir="rtl"**. Your CSS will automatically present it self in RTL format.
 
 
 ## In Code
