@@ -13,6 +13,13 @@ d2-i18n contains a default configuration set on top of [i18next library](https:/
 yarn add d2-i18n
 ```
 
+## Upgrade
+
+```bash
+yarn upgrade d2-i18n
+```
+
+
 ## Change/Set Language
 
 Will set the current language for frontend app.
