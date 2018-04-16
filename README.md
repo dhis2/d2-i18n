@@ -13,6 +13,13 @@ d2-i18n contains a default configuration set on top of [i18next library](https:/
 yarn add d2-i18n
 ```
 
+### Usage
+
+Include locales inside the top of your **index.html**
+```js
+import './locales'
+```
+
 ## Upgrade
 
 ```bash
