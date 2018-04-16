@@ -13,26 +13,33 @@ d2-i18n contains a default configuration set on top of [i18next library](https:/
 yarn add d2-i18n
 ```
 
-### Usage
+### Usage (Import and Change Language)
 
-Include locales inside the top of your **index.html**
+Include locales inside the top of your **index.js**
+
+#### Import
 ```js
-import './locales'
+import i18n from './locales';
+```
+
+#### Set Language
+```js
+const configI18n = userSettings => {
+    const uiLocale = userSettings.keyUiLocale;
+
+    if (uiLocale && uiLocale !== 'en') {
+        config.i18n.sources.add(`./i18n/i18n_module_${uiLocale}.properties`);
+    }
+
+    config.i18n.sources.add('./i18n/i18n_module_en.properties');
+    i18n.changeLanguage(uiLocale);
+};
 ```
 
 ## Upgrade
 
 ```bash
 yarn upgrade d2-i18n
-```
-
-
-## Change/Set Language
-
-Will set the current language for frontend app.
-
-```js
-i18n.changeLanguage(lng)
 ```
 
 ## RTL CSS / Right to Left Styles
