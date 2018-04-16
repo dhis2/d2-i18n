@@ -20,9 +20,13 @@ Include locales inside the top of your **index.js**
 #### Import
 ```js
 import i18n from './locales';
+import { config, getUserSettings } from 'd2/lib/d2';
 ```
 
 #### Set Language
+
+i18n configuration function
+
 ```js
 const configI18n = userSettings => {
     const uiLocale = userSettings.keyUiLocale;
@@ -34,6 +38,19 @@ const configI18n = userSettings => {
     config.i18n.sources.add('./i18n/i18n_module_en.properties');
     i18n.changeLanguage(uiLocale);
 };
+```
+
+inside App initialization,
+
+```
+getUserSettings()
+    .then(configI18n)
+    .then(() => {
+        ReactDOM.render(
+            <!-- D2UIApp Rendering Code --->,
+            document.getElementById('root')
+        );
+    });
 ```
 
 ## Upgrade
