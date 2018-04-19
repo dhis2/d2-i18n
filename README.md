@@ -147,6 +147,29 @@ Therefore, you must generate the localization before they are needed anywhere, f
 "build": "npm run localize && node scripts/build.js"
 ```
 
+### Date/Time
+
+_d2-i18n-generate_ will generate _locales/index.js_. In _locales/index.js_ we import date/time configuration for only the languages localized to the particular app.
+
+**Example**
+
+If our _dhis-example-app_ is localized to support languages, Swedish and Urdu. Then generated _locales/index.js_ will only import moment language support for Swedish and Urdu. Benefit of using [moment](https://momentjs.com/) is it's supported across javascript frameworks and libraries.
+
+Inside your _index.js_ or _App.js_ where you initialize your _App_. You must import *locales* for example,
+```js
+import './locales'
+```
+
+#### Localizing Date/Time
+
+Fetch current user _lang/locale_ from server and set using _moment.locale_
+
+**Example**
+```js
+import moment from 'moment'
+moment.locale(USER_LANG)
+```
+
 ### Travis .travis.yml
 
 Before build/deploy part add the `npm run localize` so that localization files are available otherwise code will not work.
