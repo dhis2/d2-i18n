@@ -1,3 +1,13 @@
+## Table of Contents
+
+1. Install
+2. Usage
+3. Upgrade
+4. RTL CSS
+5. Integration
+6. Date/Time
+7. Build / Travis
+
 
 ## About
 
