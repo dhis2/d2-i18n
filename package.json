@@ -1,9 +1,9 @@
 {
-  "name": "d2-i18n",
+  "name": "@dhis2/d2-i18n",
   "version": "1.0.2",
   "description": "configuration wrapper for i18next translations",
   "main": "index.js",
-  "peerDependencies": {
+  "dependencies": {
     "i18next": "^10.3"
   },
   "scripts": {
@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/dhis2/d2-i18n/issues"
   },
-  "homepage": "https://github.com/dhis2/d2-i18n#readme"
+  "homepage": "https://github.com/dhis2/d2-i18n#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }
