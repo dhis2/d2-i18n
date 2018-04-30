@@ -20,7 +20,7 @@ d2-i18n contains a default configuration set on top of [i18next library](https:/
 ## Install
 
 ```bash
-yarn add d2-i18n
+yarn add @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract
 ```
 
 ### Usage (Import and Change Language)
@@ -66,7 +66,7 @@ getUserSettings()
 ## Upgrade
 
 ```bash
-yarn upgrade d2-i18n
+yarn upgrade --scope @dhis2
 ```
 
 ## RTL CSS / Right to Left Styles
