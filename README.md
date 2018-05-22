@@ -73,6 +73,22 @@ require('postcss-flexbugs-fixes'),
 
 Add **dir="ltr"** to *index.html* file. When switching to RTL language set **dir="rtl"**. Your CSS will automatically present it self in RTL format.
 
+### Change document direction
+
+Switch document direction _right to left_. Subsequently when you change to an _ltr_ language use *ltr* as last argument in below example.
+```js
+document.body.setAttribute('dir', 'rtl')
+```
+
+### Detect RTL language
+
+```js
+function isLangRTL(code) {
+    const langs = ['ar', 'fa', 'ur']
+    const prefixed = langs.map(c => `${c}-`)
+    return langs.includes(code) || prefixed.filter(c => code.startsWith(c)).length > 0
+}
+```
 
 ## In Code
 String passed into i18n.t will translate text w.r.t. current language set.
@@ -121,7 +137,7 @@ Add pre-commit hook to extract _en.pot_ file. It will extract translation string
 "husky": {
       "hooks": {
           "pre-commit": "npm run extract-pot && npm run prettify && CI=true npm run test && git add -A ."
-      }
+      }document.body.setAttribute('dir', 'rtl')
   }
 ```
 
