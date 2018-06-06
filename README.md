@@ -39,7 +39,7 @@ Add the __"husky"__ section adjacent to the __"scripts"__ section.
 ```
 
 ## webpack.config.[dev,prod].js
-Under **CSS** plugins prepend the following _postcss_ plugins.
+Use **css** for styles because we can automate **RTL** styles. Prepend the following _postcss_ plugin to postcss.
 
 ```js
 require('postcss-rtl'),
