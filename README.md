@@ -23,7 +23,7 @@ npm install --save @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract
 ## package.json
 // TODO
 
-## Code Configuration
+## In App Code
 On dev/build phase *src/locales* directory would be created. It will contain necessary setup for internationalization, date/time, calendar etc. It is auto-generated, so please don't update it, any changes to it will be lost.
 
 At the top of *src/index.js* (assuming it's the main entry point to your App). Add the following,
@@ -32,8 +32,8 @@ At the top of *src/index.js* (assuming it's the main entry point to your App). A
 import { config, getUserSettings } from 'd2/lib/d2';
 ```
 
-## Change Locale
-Create a function changeLocale as below. You should call this function in App loading phase.
+### Change Locale
+Create a function *changeLocale* and *isLangRTL* as below. You should call this function in App loading phase.
 
 ```js
 function isLangRTL(code) {
@@ -49,44 +49,31 @@ function changeLocale(userSettings) {
 }
 ```
 
-## .gitigore
+### Translations
+String passed into i18n.t will translate text
+
+```js
+import i18n from '@dhis2/d2-i18n'
+i18n.t('translation string');
+```
+
+
+## .gitignore
 Append directory *src/locales* at the end. Because on dev/build phase *src/locales* is auto-generated.
 
+## Upgrade
+__yarn__
+```bash
+yarn upgrade --scope @dhis2
+```
 
-3. Upgrade
+
 4. RTL CSS
 5. Integration
 6. Date/Time
 7. Build / Travis
 
-#### Set Language
 
-i18n configuration function
-
-```js
-const configI18n = userSettings => {
-    i18n.changeLanguage(userSettings.keyUiLocale);
-};
-```
-
-inside App initialization,
-
-```
-getUserSettings()
-    .then(configI18n)
-    .then(() => {
-        ReactDOM.render(
-            <!-- D2UIApp Rendering Code --->,
-            document.getElementById('root')
-        );
-    });
-```
-
-## Upgrade
-
-```bash
-yarn upgrade --scope @dhis2
-```
 
 ## RTL CSS / Right to Left Styles
 Include postcss-rtl plugin as follows inside your webpack.config.*dev/prod*.js
@@ -95,22 +82,6 @@ Include postcss-rtl plugin as follows inside your webpack.config.*dev/prod*.js
 require('postcss-cssnext'),
 require('postcss-rtl'),
 require('postcss-flexbugs-fixes'),
-```
-
-Add **dir="ltr"** to *index.html* file. When switching to RTL language set **dir="rtl"**. Your CSS will automatically present it self in RTL format.
-
-### Change document direction
-
-Switch document direction _right to left_. Subsequently when you change to an _ltr_ language use *ltr* as last argument in below example.
-```js
-document.body.setAttribute('dir', 'rtl')
-```
-
-## In Code
-String passed into i18n.t will translate text w.r.t. current language set.
-
-```js
-i18n.t('translation string');
 ```
 
 **Note**
