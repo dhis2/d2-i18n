@@ -11,16 +11,19 @@ yarn add @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract husky@nex
 ```
 
 ## package.json
-Under **scripts** section,
-- Add commands *prettify*, *extract-pot* and *localize*
-- Prepend *localize* command to *prestart* and *build* steps
+Under **scripts** section.
 
+Add commands *prettify*, *extract-pot* and *localize*
 ```js
 "prettify": "prettier \"src/**/*.{js,jsx,json,css}\" --write",
 "extract-pot": "d2-i18n-extract -p src/ -o i18n/",
 "localize": "yarn extract-pot && d2-i18n-generate -n NAMESPACE -p ./i18n/ -o ./src/locales/",
+```
+
+Prepend *localize* command to *prestart* and *build* steps
+```js
 "prestart": "yarn localize && d2-manifest package.json ./public/manifest.webapp",
-"build": "yarn localize && node scripts/build.js"
+"build": "yarn localize && node scripts/build.js",
 ```
 
 ### Commit Hooks
