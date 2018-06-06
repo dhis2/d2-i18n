@@ -1,26 +1,38 @@
-## About
-
-d2-i18n contains a default configuration set on top of [i18next library](https://www.i18next.com)
-
-- [API](https://www.i18next.com/api.html)
-- [Interpolation](https://www.i18next.com/interpolation.html)
-- [Frameworks](https://www.i18next.com/supported-frameworks.html)
-
 ## Installation
 ```bash
-yarn add @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract
+yarn add @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract husky@next prettier
 ```
 
 ## package.json
 Under **scripts** section,
-- Add commands *extract-pot*, *localize*
+- Add commands *prettify*, *extract-pot* and *localize*
 - Prepend *localize* command to *prestart* and *build* steps
 
 ```js
+"prettify": "prettier \"src/**/*.{js,jsx,json,css}\" --write",
 "extract-pot": "d2-i18n-extract -p src/ -o i18n/",
 "localize": "yarn extract-pot && d2-i18n-generate -n NAMESPACE -p ./i18n/ -o ./src/locales/"
 "prestart": "yarn localize && d2-manifest package.json ./public/manifest.webapp",
 "build": "yarn localize && node scripts/build.js"
+```
+
+### Commit Hooks
+
+Add the __"husky"__ section adjacent to the __"scripts"__ section.
+
+```json
+"husky": {
+      "hooks": {
+          "pre-commit": "yarn extract-pot && yarn prettify && CI=true yarn test && git add -A ."
+      }
+  }
+```
+
+## webpack.config.[dev/prod].js
+Under **CSS** plugins prepend the following _postcss_ plugins.
+
+```js
+require('postcss-rtl'),
 ```
 
 ## In App Code
@@ -50,7 +62,7 @@ function changeLocale(userSettings) {
 ```
 
 ### Translations
-String passed into i18n.t will translate text
+Pass strings to be translated into _i18n.t_ function as below.
 
 ```js
 import i18n from '@dhis2/d2-i18n'
@@ -69,33 +81,5 @@ yarn upgrade --scope @dhis2
 ## .travis.yml
 In *.travis.yml* before build/deploy step add `yarn localize`
 
-## RTL CSS / Right to Left Styles
-Include postcss-rtl plugin as follows inside your webpack.config.*dev/prod*.js
-
-```js
-require('postcss-cssnext'),
-require('postcss-rtl'),
-require('postcss-flexbugs-fixes'),
-```
-
-## Commit Hooks
-```bash
-$>  yarn add i18next husky@next prettier
-```
-
-```
-"prettify": "prettier \"src/**/*.{js,jsx,json,css}\" --write",
-```
-
-Add pre-commit hook to extract _en.pot_ file. It will extract translation strings from _src/_ directory with file extensions _*.js, *.jx_. On finish it place _en.pot_ file inside _i18n/en.pot_ directory
-
-```json
-"husky": {
-      "hooks": {
-          "pre-commit": "yarn extract-pot && yarn prettify && CI=true yarn test && git add -A ."
-      }
-  }
-```
-
-**Note**
+## Note
 We don't use _react-i18next_ because handling cursor in editor with the mixing of ASCII and RTL characters is very messy. ASCII characters move the cursor to one end of the line while RTL characters take cursor to the opposite end. Additionally using variables in RTL language strings doesn't work as the first sequence of _{{_ might be entered correctly but the next sequence of _}}_ simply flows in the opposite direction making it impossible to translate.
