@@ -1,14 +1,3 @@
-## Table of Contents
-
-1. Install
-2. Usage
-3. Upgrade
-4. RTL CSS
-5. Integration
-6. Date/Time
-7. Build / Travis
-
-
 ## About
 
 d2-i18n contains a default configuration set on top of [i18next library](https://www.i18next.com)
@@ -17,21 +6,58 @@ d2-i18n contains a default configuration set on top of [i18next library](https:/
 - [Interpolation](https://www.i18next.com/interpolation.html)
 - [Frameworks](https://www.i18next.com/supported-frameworks.html)
 
-## Install
+## Installation
 
+Use either yarn or npm depending on project configuration.
+
+__yarn__
 ```bash
 yarn add @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract
 ```
 
-### Usage (Import and Change Language)
+__npm__
+```bash
+npm install --save @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract
+```
 
-Include locales inside the top of your **index.js**
+## package.json
+// TODO
 
-#### Import
+## Code Configuration
+On dev/build phase *src/locales* directory would be created. It will contain necessary setup for internationalization, date/time, calendar etc. It is auto-generated, so please don't update it, any changes to it will be lost.
+
+At the top of *src/index.js* (assuming it's the main entry point to your App). Add the following,
+
 ```js
-import i18n from './locales';
 import { config, getUserSettings } from 'd2/lib/d2';
 ```
+
+## Change Locale
+Create a function changeLocale as below. You should call this function in App loading phase.
+
+```js
+function isLangRTL(code) {
+    const langs = ['ar', 'fa', 'ur']
+    const prefixed = langs.map(c => `${c}-`)
+    return langs.includes(code) || prefixed.filter(c => code.startsWith(c)).length > 0
+}
+
+function changeLocale(userSettings) {
+    const locale = userSettings.keyUiLocale
+    i18n.changeLanguage(locale)
+    document.body.setAttribute('dir', isLangRTL('rtl') ? 'rtl' : 'ltr')
+}
+```
+
+## .gitigore
+Append directory *src/locales* at the end. Because on dev/build phase *src/locales* is auto-generated.
+
+
+3. Upgrade
+4. RTL CSS
+5. Integration
+6. Date/Time
+7. Build / Travis
 
 #### Set Language
 
@@ -78,16 +104,6 @@ Add **dir="ltr"** to *index.html* file. When switching to RTL language set **dir
 Switch document direction _right to left_. Subsequently when you change to an _ltr_ language use *ltr* as last argument in below example.
 ```js
 document.body.setAttribute('dir', 'rtl')
-```
-
-### Detect RTL language
-
-```js
-function isLangRTL(code) {
-    const langs = ['ar', 'fa', 'ur']
-    const prefixed = langs.map(c => `${c}-`)
-    return langs.includes(code) || prefixed.filter(c => code.startsWith(c)).length > 0
-}
 ```
 
 ## In Code
@@ -137,7 +153,7 @@ Add pre-commit hook to extract _en.pot_ file. It will extract translation string
 "husky": {
       "hooks": {
           "pre-commit": "npm run extract-pot && npm run prettify && CI=true npm run test && git add -A ."
-      }document.body.setAttribute('dir', 'rtl')
+      }
   }
 ```
 
