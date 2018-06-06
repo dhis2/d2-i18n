@@ -7,7 +7,7 @@ Provides internationization support for d2 frontend Apps.
 
 ## Installation
 ```bash
-yarn add @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract husky@next prettier
+yarn add @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract postcss-rtl husky@next prettier
 ```
 
 ## package.json
