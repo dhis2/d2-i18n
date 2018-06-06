@@ -1,3 +1,10 @@
+## Purpose
+
+Provider international support for d2 Apps.
+
+- i18n
+- Date/Time
+
 ## Installation
 ```bash
 yarn add @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract husky@next prettier
@@ -28,7 +35,7 @@ Add the __"husky"__ section adjacent to the __"scripts"__ section.
   }
 ```
 
-## webpack.config.[dev/prod].js
+## webpack.config.[dev,prod].js
 Under **CSS** plugins prepend the following _postcss_ plugins.
 
 ```js
