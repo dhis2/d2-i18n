@@ -7,21 +7,21 @@ d2-i18n contains a default configuration set on top of [i18next library](https:/
 - [Frameworks](https://www.i18next.com/supported-frameworks.html)
 
 ## Installation
-
-Use either yarn or npm depending on project configuration.
-
-__yarn__
 ```bash
 yarn add @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract
 ```
 
-__npm__
-```bash
-npm install --save @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract
-```
-
 ## package.json
-// TODO
+Under **scripts** section,
+- Add commands *extract-pot*, *localize*
+- Prepend *localize* command to *prestart* and *build* steps
+
+```js
+"extract-pot": "d2-i18n-extract -p src/ -o i18n/",
+"localize": "yarn extract-pot && d2-i18n-generate -n NAMESPACE -p ./i18n/ -o ./src/locales/"
+"prestart": "yarn localize && d2-manifest package.json ./public/manifest.webapp",
+"build": "yarn localize && node scripts/build.js"
+```
 
 ## In App Code
 On dev/build phase *src/locales* directory would be created. It will contain necessary setup for internationalization, date/time, calendar etc. It is auto-generated, so please don't update it, any changes to it will be lost.
@@ -29,10 +29,10 @@ On dev/build phase *src/locales* directory would be created. It will contain nec
 At the top of *src/index.js* (assuming it's the main entry point to your App). Add the following,
 
 ```js
-import { config, getUserSettings } from 'd2/lib/d2';
+import './locales'
 ```
 
-### Change Locale
+### Changing User Locale
 Create a function *changeLocale* and *isLangRTL* as below. You should call this function in App loading phase.
 
 ```js
@@ -67,6 +67,8 @@ __yarn__
 yarn upgrade --scope @dhis2
 ```
 
+### .travis.yml
+Before build/deploy part add the `yarn localize` so that localization files are available otherwise code will not work.
 
 4. RTL CSS
 5. Integration
@@ -175,7 +177,3 @@ Fetch current user _lang/locale_ from server and set using _moment.locale_
 import moment from 'moment'
 moment.locale(USER_LANG)
 ```
-
-### Travis .travis.yml
-
-Before build/deploy part add the `npm run localize` so that localization files are available otherwise code will not work.
