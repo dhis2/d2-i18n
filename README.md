@@ -76,7 +76,7 @@ Pass strings to be translated into _i18n.t_ function as below.
 
 ```js
 import i18n from '@dhis2/d2-i18n'
-i18n.t('translation string');
+i18n.t('translation string')
 ```
 
 ## .gitignore
@@ -92,4 +92,4 @@ yarn upgrade --scope @dhis2
 In *.travis.yml* before build/deploy step add `yarn localize`
 
 ## Note
-We don't use _react-i18next_ because handling cursor in editor with the mixing of ASCII and RTL characters is very messy. ASCII characters move the cursor to one end of the line while RTL characters take cursor to the opposite end. Additionally using variables in RTL language strings doesn't work as the first sequence of _{{_ might be entered correctly but the next sequence of _}}_ simply flows in the opposite direction making it impossible to translate.
+We don't use _react-i18next_ because handling cursor in text editor when ASCII and RTL characters are mixed is impossible to edit. Some ASCII characters move the cursor to one end of the line while RTL characters take cursor to the opposite end. Using variables in RTL language strings do not work because the first _{{_ might be entered correctly when translating but when we go to type the ending sequence _}}_ the cursor ends up in the wrong place making it impossible to translate.
