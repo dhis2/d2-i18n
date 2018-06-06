@@ -18,7 +18,7 @@ Under **scripts** section,
 ```js
 "prettify": "prettier \"src/**/*.{js,jsx,json,css}\" --write",
 "extract-pot": "d2-i18n-extract -p src/ -o i18n/",
-"localize": "yarn extract-pot && d2-i18n-generate -n NAMESPACE -p ./i18n/ -o ./src/locales/"
+"localize": "yarn extract-pot && d2-i18n-generate -n NAMESPACE -p ./i18n/ -o ./src/locales/",
 "prestart": "yarn localize && d2-manifest package.json ./public/manifest.webapp",
 "build": "yarn localize && node scripts/build.js"
 ```
