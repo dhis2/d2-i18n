@@ -1,6 +1,6 @@
 ## Purpose
 
-Provider international support for d2 Apps.
+Provides internationization support for d2 frontend Apps.
 
 - i18n
 - Date/Time
