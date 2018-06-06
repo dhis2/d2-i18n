@@ -91,5 +91,5 @@ yarn upgrade --scope @dhis2
 ## .travis.yml
 In *.travis.yml* before build/deploy step add `yarn localize`
 
-## Note
-We don't use _react-i18next_ because handling cursor in text editor when ASCII and RTL characters are mixed is impossible to edit. Some ASCII characters move the cursor to one end of the line while RTL characters take cursor to the opposite end. Using variables in RTL language strings do not work because the first _{{_ might be entered correctly when translating but when we go to type the ending sequence _}}_ the cursor ends up in the wrong place making it impossible to translate.
+## Notes
+- We don't use _react-i18next_ because handling cursor in text editor when ASCII and RTL characters are mixed is impossible to edit. Some ASCII characters move the cursor to one end of the line while RTL characters take cursor to the opposite end. Using variables in RTL language strings do not work because the first _{{_ might be entered correctly when translating but when we go to type the ending sequence _}}_ the cursor ends up in the wrong place making it impossible to translate.
