@@ -33,9 +33,9 @@ Add the __"husky"__ section adjacent to the __"scripts"__ section.
 ```json
 "husky": {
       "hooks": {
-          "pre-commit": "yarn extract-pot && yarn prettify && CI=true yarn test && git add -A ."
+            "pre-commit": "yarn extract-pot && yarn prettify && CI=true yarn test && git add -A ."
       }
-  }
+}
 ```
 
 ## webpack.config.[dev,prod].js
