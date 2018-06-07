@@ -59,14 +59,15 @@ Create a function *changeLocale* and *isLangRTL* as below. You should call this 
 
 ```js
 function isLangRTL(code) {
-    const langs = ['ar', 'fa', 'ur']
-    const prefixed = langs.map(c => `${c}-`)
-    return langs.includes(code) || prefixed.filter(c => code.startsWith(c)).length > 0
+      const langs = ['ar', 'fa', 'ur']
+      const prefixed = langs.map(c => `${c}-`)
+      return langs.includes(code) || prefixed.filter(c => code.startsWith(c)).length > 0
 }
 
 function changeLocale(locale) {
-    i18n.changeLanguage(locale)
-    document.body.setAttribute('dir', isLangRTL(locale) ? 'rtl' : 'ltr')
+      moment.locale(locale)
+      i18n.changeLanguage(locale)
+      document.body.setAttribute('dir', isLangRTL(locale) ? 'rtl' : 'ltr')
 }
 ```
 
