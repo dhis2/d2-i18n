@@ -64,8 +64,7 @@ function isLangRTL(code) {
     return langs.includes(code) || prefixed.filter(c => code.startsWith(c)).length > 0
 }
 
-function changeLocale(userSettings) {
-    const locale = userSettings.keyUiLocale
+function changeLocale(locale) {
     i18n.changeLanguage(locale)
     document.body.setAttribute('dir', isLangRTL('rtl') ? 'rtl' : 'ltr')
 }
