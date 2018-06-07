@@ -66,7 +66,7 @@ function isLangRTL(code) {
 
 function changeLocale(locale) {
     i18n.changeLanguage(locale)
-    document.body.setAttribute('dir', isLangRTL('rtl') ? 'rtl' : 'ltr')
+    document.body.setAttribute('dir', isLangRTL(locale) ? 'rtl' : 'ltr')
 }
 ```
 
