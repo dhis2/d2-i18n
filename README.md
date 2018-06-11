@@ -13,9 +13,8 @@ yarn add @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract postcss-r
 ## package.json
 Under **scripts** section.
 
-Add commands *prettify*, *extract-pot* and *localize*
+Add commands *extract-pot* and *localize*
 ```js
-"prettify": "prettier \"src/**/*.{js,jsx,json,css}\" --write",
 "extract-pot": "d2-i18n-extract -p src/ -o i18n/",
 "localize": "yarn extract-pot && d2-i18n-generate -n NAMESPACE -p ./i18n/ -o ./src/locales/",
 ```
@@ -33,7 +32,7 @@ Add the __"husky"__ section adjacent to the __"scripts"__ section.
 ```json
 "husky": {
       "hooks": {
-            "pre-commit": "yarn extract-pot && yarn prettify && CI=true yarn test && git add -A ."
+            "pre-commit": "yarn extract-pot && CI=true yarn test && git add -A ."
       }
 }
 ```
