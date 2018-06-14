@@ -32,7 +32,7 @@ Add the __"husky"__ section adjacent to the __"scripts"__ section.
 ```json
 "husky": {
       "hooks": {
-            "pre-commit": "yarn extract-pot && CI=true yarn test && git add -A ."
+            "pre-commit": "yarn extract-pot && CI=true yarn test && git add -u"
       }
 }
 ```
