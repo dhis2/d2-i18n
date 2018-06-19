@@ -12,6 +12,10 @@ Provides internationization support for d2 frontend Apps.
 yarn add @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract postcss-rtl husky@next
 ```
 
+
+## public/index.html
+set attribute _dir="ltr"_ on html tag
+
 ## package.json
 Under **scripts** section.
 
