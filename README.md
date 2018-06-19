@@ -4,6 +4,8 @@ Provides internationization support for d2 frontend Apps.
 
 - i18n
 - Date/Time
+- Translations
+- Monitor Translations [documentation](https://github.com/dhis2/d2-i18n-monitor), [website](https://dhis2.github.io/d2-i18n-monitor/#/)
 
 ## Installation
 ```bash
