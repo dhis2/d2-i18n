@@ -14,7 +14,11 @@ yarn add @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract postcss-r
 
 
 ## public/index.html
+
 set attribute _dir="ltr"_ on html tag
+```html
+<html lang="en" dir="ltr">
+```
 
 ## package.json
 Under **scripts** section.
@@ -47,7 +51,20 @@ Add the __"husky"__ section adjacent to the __"scripts"__ section.
 Use **css** for styles because we can automate **RTL** styles. Prepend the following _postcss_ plugin to postcss.
 
 ```js
-require('postcss-rtl'),
+plugins: () => [
+      require('postcss-rtl'),
+      require('postcss-flexbugs-fixes'),
+      // ... other plugins remain as is
+]
+```
+
+enable CSS _modules_ support
+
+```js
+options: {
+      modules: true,
+      // ... other options remain as is
+}
 ```
 
 ## In App Code
