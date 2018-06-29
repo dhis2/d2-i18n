@@ -10,6 +10,7 @@ i18next.init({
   ns: ['translation'],
   defaultNS: 'translation',
   fallbackNS: false,
+  nsSeparator: false,
 
   returnEmptyString: false,
   returnObjects: false,
