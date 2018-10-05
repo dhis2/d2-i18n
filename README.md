@@ -21,9 +21,7 @@ set attribute _dir="ltr"_ on html tag
 ```
 
 ## package.json
-Under **scripts** section.
-
-Add commands *extract-pot* and *localize*
+Under **scripts** section, add commands *extract-pot* and *localize*
 ```js
 "extract-pot": "d2-i18n-extract -p src/ -o i18n/",
 "localize": "yarn extract-pot && d2-i18n-generate -n NAMESPACE -p ./i18n/ -o ./src/locales/",
