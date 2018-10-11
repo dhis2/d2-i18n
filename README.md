@@ -99,6 +99,19 @@ import i18n from '@dhis2/d2-i18n'
 i18n.t('translation string')
 ```
 
+#### Context
+Pass _context_ property on second arg. to i18n.t
+```js
+i18n.t('hello world', { context: 'a customary string to welcome a new born developer'})
+```
+
+_extract-pot_ will automatically generate _msgctxt_ field before _msgid_ in the en.pot file, giving translators a better context for translations.
+```
+msgctxt "a customary string to welcome a new born developer"
+msgid "hello world"
+msgstr ""
+```
+
 ## .gitignore
 Append directory *src/locales* at the end. Because on dev/build phase *src/locales* is auto-generated.
 
