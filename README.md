@@ -9,15 +9,7 @@ Provides internationization support for d2 frontend Apps.
 
 ## Installation
 ```bash
-yarn add @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract postcss-rtl husky@next
-```
-
-
-## public/index.html
-
-set attribute _dir="ltr"_ on html tag
-```html
-<html lang="en" dir="ltr">
+yarn add @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract husky@next
 ```
 
 ## package.json
@@ -42,26 +34,6 @@ Add the __"husky"__ section adjacent to the __"scripts"__ section.
       "hooks": {
             "pre-commit": "yarn extract-pot && CI=true yarn test && git add ./i18n/"
       }
-}
-```
-
-## webpack.config.[dev,prod].js
-Use **css** for styles because we can automate **RTL** styles. Prepend the following _postcss_ plugin to postcss.
-
-```js
-plugins: () => [
-      require('postcss-rtl'),
-      require('postcss-flexbugs-fixes'),
-      // ... other plugins remain as is
-]
-```
-
-enable CSS _modules_ support
-
-```js
-options: {
-      modules: true,
-      // ... other options remain as is
 }
 ```
 
