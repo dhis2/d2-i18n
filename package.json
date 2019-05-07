@@ -8,9 +8,7 @@
     "i18n-extract": "./bin/i18n-extract"
   },
   "dependencies": {
-    "i18next": "^10.3"
-  },
-  "devDependencies": {
+    "i18next": "^10.3",
     "argparse": "^1.0.10",
     "i18next-conv": "^6.0.0",
     "i18next-scanner": "^2.4.4",
