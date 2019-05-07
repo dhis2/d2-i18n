@@ -8,8 +8,51 @@ Provides internationization support for d2 frontend Apps.
 - Monitoring translations [documentation](https://github.com/dhis2/d2-i18n-monitor), [website](https://dhis2.github.io/d2-i18n-monitor/#/)
 
 ## Installation
+
 ```bash
-yarn add @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract husky@next
+yarn add @dhis2/i18n
+```
+
+## `i18n-generate`
+
+Generate JSON files compatible with i18next from po/pot files.
+
+```bash
+$> d2-i18n-generate [-h] [-v] [-p PATH] [-o OUTPUT] -n NAMESPACE
+
+Generate JSON files compatible with i18next from po/pot files.
+
+Optional arguments:
+  -h, --help            Show this help message and exit.
+  -v, --version         Show version number and exit.
+  -p PATH, --path PATH  directory path to find .po/.pot files and convert to 
+                        JSON.
+  -o OUTPUT, --output OUTPUT
+                        Output directory to place converted JSON files.
+  -n NAMESPACE, --namespace NAMESPACE
+                        Namespace for app. locale separation.
+```
+
+## `i18n-extract`
+
+```bash
+$> d2-i18n-extract -p ./src/ -o ./i18n/
+```
+
+## Usage
+
+Extract i18n.t translation strings from DHIS2 frontend apps
+
+```
+d2-i18n-extract [-h] [-v] [-p PATH] [-o OUTPUT]
+
+Optional arguments:
+  -h, --help            Show this help message and exit.
+  -v, --version         Show program's version number and exit.
+  -p PATH, --path PATH  directory path to recurse and extract i18n.t 
+                        translation strings
+  -o OUTPUT, --output OUTPUT
+                        destination path for en.pot file.
 ```
 
 ## package.json
