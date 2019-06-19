@@ -4,7 +4,8 @@
   "description": "configuration wrapper for i18next translations",
   "main": "index.js",
   "dependencies": {
-    "i18next": "^10.3"
+    "i18next": "^10.3",
+    "moment": "^2.24.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
