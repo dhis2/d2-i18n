@@ -1,31 +1,40 @@
 {
-  "name": "@dhis2/d2-i18n",
-  "version": "1.0.6",
-  "description": "configuration wrapper for i18next translations",
-  "main": "index.js",
-  "dependencies": {
-    "i18next": "^10.3",
-    "moment": "^2.24.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dhis2/d2-i18n.git"
-  },
-  "keywords": [
-    "i18n",
-    "i18next",
-    "translations"
-  ],
-  "author": "Muhammad Adeel",
-  "license": "BSD-3-Clause",
-  "bugs": {
-    "url": "https://github.com/dhis2/d2-i18n/issues"
-  },
-  "homepage": "https://github.com/dhis2/d2-i18n#readme",
-  "publishConfig": {
-    "access": "public"
-  }
+    "name": "@dhis2/d2-i18n",
+    "version": "1.0.6",
+    "description": "configuration wrapper for i18next translations",
+    "main": "./build/cjs/index.js",
+    "module": "./build/es/index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dhis2/d2-i18n.git"
+    },
+    "keywords": [
+        "i18n",
+        "translations"
+    ],
+    "author": "Muhammad Adeel",
+    "license": "BSD-3-Clause",
+    "bugs": {
+        "url": "https://github.com/dhis2/d2-i18n/issues"
+    },
+    "homepage": "https://github.com/dhis2/d2-i18n#readme",
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": ["build"],
+    "exports": {
+        "import": "./build/es/index.js",
+        "require": "./build/cjs/index.js"
+    },
+    "devDependencies": {
+        "@dhis2/cli-app-scripts": "^5.7.2"
+    },
+    "dependencies": {
+        "i18next": "^10.3",
+        "moment": "^2.24.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "d2-app-scripts build"
+    }
 }

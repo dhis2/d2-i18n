@@ -9,32 +9,15 @@ Provides internationization support for d2 frontend Apps.
 
 ## Installation
 ```bash
-yarn add @dhis2/d2-i18n @dhis2/d2-i18n-generate @dhis2/d2-i18n-extract husky@next
+yarn add @dhis2/d2-i18n
 ```
 
-## package.json
-Under **scripts** section, add commands *extract-pot* and *localize*
-```js
-"extract-pot": "d2-i18n-extract -p src/ -o i18n/",
-"localize": "yarn extract-pot && d2-i18n-generate -n NAMESPACE -p ./i18n/ -o ./src/locales/",
-```
+## Extracting and generating locale strings
+Extraction and generation are performed automatically by the `build` and `start` commands of [@dhis2/cli-app-scripts](https://platform.dhis2.nu).  Optionally, they can be run independent of the build as well:
 
-Prepend *localize* command to *prestart* and *build* steps
-```js
-"prestart": "yarn localize && d2-manifest package.json ./public/manifest.webapp",
-"build": "yarn localize && node scripts/build.js",
-```
-
-### Commit Hooks
-
-Add the __"husky"__ section adjacent to the __"scripts"__ section.
-
-```json
-"husky": {
-      "hooks": {
-            "pre-commit": "yarn extract-pot && CI=true yarn test && git add ./i18n/"
-      }
-}
+```sh
+yarn d2-app-scripts i18n extract
+yarn d2-app-scripts i18n generate
 ```
 
 ## In App Code

@@ -1,4 +1,4 @@
-var i18next = require('i18next')
+import i18next from 'i18next'
 
 i18next.init({
   resources: undefined,
@@ -21,4 +21,4 @@ i18next.init({
   }
 });
 
-module.exports = i18next
+export default i18next
