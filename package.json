@@ -4,6 +4,10 @@
     "description": "configuration wrapper for i18next translations",
     "main": "./build/cjs/index.js",
     "module": "./build/es/index.js",
+    "exports": {
+        "import": "./build/es/index.js",
+        "require": "./build/cjs/index.js"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/dhis2/d2-i18n.git"
@@ -24,10 +28,6 @@
     "files": [
         "build"
     ],
-    "exports": {
-        "import": "./build/es/index.js",
-        "require": "./build/cjs/index.js"
-    },
     "devDependencies": {
         "@dhis2/cli-app-scripts": "^5.7.2",
         "@dhis2/cli-style": "^7.3.0"
