@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/d2-i18n",
-    "version": "1.0.6",
+    "version": "1.1.0",
     "description": "configuration wrapper for i18next translations",
     "main": "./build/cjs/index.js",
     "module": "./build/es/index.js",
