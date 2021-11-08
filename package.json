@@ -30,7 +30,7 @@
     ],
     "devDependencies": {
         "@dhis2/cli-app-scripts": "^5.7.2",
-        "@dhis2/cli-style": "^7.3.0"
+        "@dhis2/cli-style": "^10.1.1"
     },
     "dependencies": {
         "i18next": "^10.3",
