@@ -39,10 +39,10 @@ Create a function _changeLocale_ and _isLangRTL_ as below. You should call this 
 ```js
 function isLangRTL(code) {
     const langs = ['ar', 'fa', 'ur']
-    const prefixed = langs.map(c => `${c}-`)
+    const prefixed = langs.map((c) => `${c}-`)
     return (
         langs.includes(code) ||
-        prefixed.filter(c => code.startsWith(c)).length > 0
+        prefixed.filter((c) => code.startsWith(c)).length > 0
     )
 }
 
