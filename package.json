@@ -29,7 +29,7 @@
         "build"
     ],
     "devDependencies": {
-        "@dhis2/cli-app-scripts": "^5.7.2",
+        "@dhis2/cli-app-scripts": "^10.0.1",
         "@dhis2/cli-style": "^7.3.0"
     },
     "dependencies": {
