@@ -30,7 +30,7 @@
     ],
     "devDependencies": {
         "@dhis2/cli-app-scripts": "^5.7.2",
-        "@dhis2/cli-style": "^7.3.0"
+        "@dhis2/cli-style": "^10.4.1"
     },
     "dependencies": {
         "i18next": "^10.3",
@@ -39,7 +39,7 @@
     "scripts": {
         "test": "echo \"No test specified, skipping...\"",
         "build": "d2-app-scripts build",
-        "lint": "d2-style js check && d2-style text check",
-        "format": "d2-style js apply && d2-style text apply"
+        "lint": "d2-style check js && d2-style check text",
+        "format": "d2-style apply js && d2-style apply text"
     }
 }
