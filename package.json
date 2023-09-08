@@ -26,7 +26,8 @@
         "access": "public"
     },
     "files": [
-        "build"
+        "build",
+        "*.d.ts"
     ],
     "devDependencies": {
         "@dhis2/cli-app-scripts": "^5.7.2",
