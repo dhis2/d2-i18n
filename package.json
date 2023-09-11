@@ -27,7 +27,7 @@
     },
     "files": [
         "build",
-        "*.d.ts"
+        "types"
     ],
     "types": "types",
     "devDependencies": {
