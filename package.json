@@ -26,13 +26,16 @@
         "access": "public"
     },
     "files": [
-        "build"
+        "build",
+        "types"
     ],
+    "types": "types",
     "devDependencies": {
         "@dhis2/cli-app-scripts": "^5.7.2",
         "@dhis2/cli-style": "^7.3.0"
     },
     "dependencies": {
+        "@types/i18next": "^11.9.0",
         "i18next": "^10.3",
         "moment": "^2.24.0"
     },
