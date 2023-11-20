@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/dhis2/d2-i18n/compare/v1.1.2...v1.1.3) (2023-11-20)
+
+
+### Bug Fixes
+
+* **package:** add types to exports ([#137](https://github.com/dhis2/d2-i18n/issues/137)) ([458e385](https://github.com/dhis2/d2-i18n/commit/458e385ad46472f0bdcfecd52129959484583c7b))
+
 ## [1.1.2](https://github.com/dhis2/d2-i18n/compare/v1.1.1...v1.1.2) (2023-09-11)
 
 
