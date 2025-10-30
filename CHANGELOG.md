@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/dhis2/d2-i18n/compare/v1.1.3...v1.2.0) (2025-10-30)
+
+
+### Features
+
+* add mapping for fallback languages ([#139](https://github.com/dhis2/d2-i18n/issues/139)) ([23ff646](https://github.com/dhis2/d2-i18n/commit/23ff646a870a0287d721583063d26c48343111dd))
+
 ## [1.1.3](https://github.com/dhis2/d2-i18n/compare/v1.1.2...v1.1.3) (2023-11-20)
 
 
