@@ -5,7 +5,13 @@ if (!i18next.isInitialized) {
         resources: undefined,
 
         lng: 'en',
-        fallbackLng: 'en',
+        fallbackLng: {
+            pt_BR: 'pt',
+            ar_IQ: 'ar',
+            ar_SD: 'ar',
+            zh_CN: 'zh',
+            default: 'en',
+        },
 
         debug: false,
         ns: ['translation'],
