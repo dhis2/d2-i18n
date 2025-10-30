@@ -5,7 +5,17 @@ if (!i18next.isInitialized) {
         resources: undefined,
 
         lng: 'en',
-        fallbackLng: 'en',
+        fallbackLng: {
+            ar_IQ: ['ar'],
+            ar_EG: ['ar'],
+            ar_SD: ['ar'],
+            es_419: ['es'],
+            pt_BR: ['pt'],
+            uz_Cyrl: ['uz_UZ_Cyrl'],
+            uz_Latn: ['uz_UZ_Latn'],
+            zh_CN: ['zh'],
+            default: ['en'],
+        },
 
         debug: false,
         ns: ['translation'],
